@@ -1,4 +1,8 @@
-
+/**
+ * This class contains the configurations for this game.
+ * Contains the width and height of the window, width and height of the snake position, the number of rows and columns 
+ * in the game, and the interval.
+ */
 public class Configure {
 
 	public static final int WIDTH = 400;
