@@ -1,5 +1,9 @@
 import java.util.LinkedList;
 
+/**
+ * Class contains the functions of the snake, such as movement, reseting the snake, food detection, obstable detection,
+ * etc. 
+ */
 public class Snake {
     private Direction snake_Direction;
     // the current direction of the snake
@@ -17,36 +21,68 @@ public class Snake {
     public static final int Column = Configure.COL;
     // get the row and column data from the configuration file
 
+    /**
+     * Constructor that creates a new array of the snake. 
+     */
     public Snake() {
         snakeBody = new LinkedList<SnakePosition>();
         reset();
         // reset the snake
     }
 
+    /**
+     * Method gets the snake's direction. 
+     * @return snake_direction (type Direction) - The snake's direction
+     */
     public Direction getSnake_Direction() {
         return snake_Direction;
     }
 
+    
+    /**
+     * Method sets the snake's direction 
+     * @param snake_Direction (type Direction) The direction the snake will be going 
+     */
     public void setSnake_Direction(Direction snake_Direction) {
         this.snake_Direction = snake_Direction;
     }
 
+    
+    /**
+     * Method gets the snake's body 
+     * @return the Array of the snake's body 
+     */
     public LinkedList<SnakePosition> getSnakeBody() {
         return snakeBody;
     }
 
+    /**
+     * Method gets the food 
+     * @return food (type Food) 
+     */
     public Food getFood() {
         return food;
     }
 
+    
+    /**
+     * Setter method for food
+     * @param food (type Food) The food instance you want to pass in. 
+     */
     public void setFood(Food food) {
         this.food = food;
     }
 
+    
+    /**
+     * Set the direction given by the player 
+     * @param dir (Type Direction) - Direction given by the player. 
+     */
     public void setMove_Direction(Direction dir) {
         this.move_Direction = dir;
     }
 
+    
     /**
      *Use this method to reset the snake, to let the snake has three blocks of length,
      *then reset the snake in a random position which is up to his old body.
@@ -71,6 +107,7 @@ public class Snake {
         // set the initial direction of the snake
     }
 
+    
     /**
   *create a snakebody(SnakePosition Class) object then return
   *
@@ -84,7 +121,9 @@ public class Snake {
 
         return new SnakePosition(randomRow, randomCol);
     }
-    /*
+    
+   
+    /**
     * control the movement of the snake
     */
     public void snakeMove() {
