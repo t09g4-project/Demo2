@@ -1,3 +1,7 @@
+/**
+ * This class controls and functions for the food object. 
+ */
+
 import java.util.LinkedList;
 
 public class Food extends SnakePosition {
@@ -15,16 +19,13 @@ public class Food extends SnakePosition {
         // randomly set the location of the food
     }
 
-    /**
-  *receive the Linkedlist<SnakeBody>, make sure that the food will not appear on snakebody
-  *(we find this bug on demo1)
-  *
-  *@param snakeBody
-  *       this is the Linkedlist<SnakeBody>
-  *@return Returning the instantiated object itself
-  */
 
 
+   /**
+     * Method will be used to check if the food block will be on the same position as the snake's body when spawned.
+     * @param snakeBody (Type - SnakePosition class)
+     * @return boolean. True if the food is touching the snake's body, False otherwise.
+     */
     private boolean checkSame(LinkedList<SnakePosition> snakeBody) {
         for (SnakePosition sp : snakeBody)
             if (sp.row == this.row && sp.col == this.col)
@@ -32,7 +33,17 @@ public class Food extends SnakePosition {
         // return true if it does
         return false;
     }
+    
+    
 
+        /**
+     *receive the Linkedlist<SnakeBody>, make sure that the food will not overlap on snakebody
+     *(we find this bug on demo1)
+     *
+     *@param snakeBody
+     *       this is the Linkedlist<SnakeBody>
+     *@return Returning the instantiated object itself
+     */
     // get the data of snake body to confirm food does not overlap the snake body
     public Food getSnake(LinkedList<SnakePosition> snakeBody) {
         while (checkSame(snakeBody))
@@ -42,15 +53,10 @@ public class Food extends SnakePosition {
         // return the object itself
     }
     
+
     /**
-  *check that is there a block in lnkedlist<SnakeBody> have the same position as Food
-  *
-  *@param snakeBody
-  *
-  *@return if they have same position,return true
-  */
-
-
+     * Method randomly sets the location of the food spawning position. 
+     */
     // randomly set the location(row and column)
     private void randomPos() {
         this.row = (int) (Math.random() * Row);
