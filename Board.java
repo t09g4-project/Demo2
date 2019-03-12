@@ -2,7 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
-
+/**
+ * Class responsible for the animation of the game. 
+ */
 public class Board {
 
  /**
